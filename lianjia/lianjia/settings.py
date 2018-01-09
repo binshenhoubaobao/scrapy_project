@@ -40,10 +40,10 @@ DEFAULT_REQUEST_HEADERS = {
 }
 
 ITEM_PIPELINES = {
-   'lianjia.pipelines.MongoPipeline': 300,
+   #'lianjia.pipelines.MongoPipeline': 300,
 }
 
-DOWNLOAD_DELAY = 2
+#DOWNLOAD_DELAY = 2
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddleware.useragent.UserAgentMiddleware': None,
     'lianjia.middlewares.MyUserAgentMiddleware': 400,

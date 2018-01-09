@@ -28,4 +28,5 @@ class LianjiaItem(scrapy.Item):
     school = scrapy.Field()         #周边学校
     subway = scrapy.Field()         #周边地铁
     house_url = scrapy.Field()     #lian jie
+    basemore = scrapy.Field()
     #pass
