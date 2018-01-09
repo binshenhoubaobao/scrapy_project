@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'lianjia.spiders'
 #USER_AGENT = 'lianjia (+http://www.yourdomain.com)'
 
 
-DEPTH_LIMIT = 1
+DEPTH_LIMIT = 3
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'project_test (+http://www.yourdomain.com)'
@@ -28,11 +28,26 @@ DEPTH_LIMIT = 1
 #ROBOTSTXT_OBEY = True
 ROBOTSTXT_OBEY = False   #不遵循robots协议
 
+MONGO_URI = 'mongodb://localhost:27017'
+MONGO_DB = "lianjia"
 
+
+
+DEFAULT_REQUEST_HEADERS = {
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+    'Connection':'keep-alive'
+}
+
+ITEM_PIPELINES = {
+   'lianjia.pipelines.MongoPipeline': 300,
+}
+
+DOWNLOAD_DELAY = 2
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddleware.useragent.UserAgentMiddleware': None,
-    'project_test.middlewares.MyUserAgentMiddleware': 400,
-    'project_test.middlewares.MyIproxyMiddleware': 455,
+    'lianjia.middlewares.MyUserAgentMiddleware': 400,
+    #'lianjia.middlewares.MyIproxyMiddleware': 455,
 }
 
 MY_USER_AGENT = [
