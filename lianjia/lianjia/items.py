@@ -27,5 +27,7 @@ class LianjiaItem(scrapy.Item):
     fangchan_class = scrapy.Field()   #房产类型
     school = scrapy.Field()         #周边学校
     subway = scrapy.Field()         #周边地铁
-    house_url = scrapy.Field()     #lian jie
+    msg = scrapy.Field()     #price msg
+    base_list = scrapy.Field() #基本属性
+    transaction_list = scrapy.Field() #交易属性
     #pass
