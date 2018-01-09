@@ -62,22 +62,22 @@ class LianjiaSpider(scrapy.spiders.Spider):
         #   </li><li><span class="label">建筑结构</span>混合结构  </li><li><span class="label">供暖方式</span>集中供暖
         # </li><li><span class="label">梯户比例</span>一梯三户
         # </li><li><span class="label">产权年限</span>70年           </li><li><span class="label">配备电梯</span>无           </li></ul></div></div>
-        base_lists = selector.xpath('//div[@class="base")/div[@class="content"]/ul/li/text()')
-        base_spans = selector.xpath('//div[@class="base")/div[@class="content"]/ul/li/span/text()')
+        base_lists = selector.xpath('//div[@class="base"]/div/ul/li/text()')
+        base_spans = selector.xpath('//div[@class="base"]/div/ul/li/span/text()')
         base_list = {}
         for i in range(len(base_lists)):
-            base_list[base_spans[i]] = base_lists[i]
+            base_list[base_spans[i].strip(' ')] = base_lists[i].strip(' ')
         items['base_list'] = base_list
 
-        #<div class="transaction"><div class="name">交易属性</div><div class="content"><ul><li><span class="label">链家编号</span>101102407859
+        # <div class="transaction"><div class="name">交易属性</div><div class="content"><ul><li><span class="label">链家编号</span>101102407859
         # </li><li><span class="label">交易权属</span>已购公房          </li><li><span class="label">挂牌时间</span>2017-12-17
         # </li><li><span class="label">房屋用途</span>普通住宅          </li><li><span class="label">房屋年限</span>暂无数据
         # </li><li><span class="label">房权所属</span>非共有           </li></ul></div></div></div>
-        transaction_lists = selector.xpath('//div[@class="transaction")/div[@class="content"]/ul/li/text()')
-        transaction_spans = selector.xpath('//div[@class="transaction")/div[@class="content"]/ul/li/span/text()')
+        transaction_lists = selector.xpath('//div[@class="transaction"]/div/ul/li/text()')
+        transaction_spans = selector.xpath('//div[@class="transaction"]/div/ul/li/span/text()')
         transaction_list = {}
         for i in range(len(transaction_lists)):
-            base_list[transaction_spans[i]] = transaction_lists[i]
+            transaction_list[transaction_spans[i].strip(' ')] = transaction_lists[i].strip(' ')
         items['transaction_list'] = transaction_list
 
         try:

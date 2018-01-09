@@ -47,15 +47,10 @@ class Lianjia_test_Spider(scrapy.spiders.Spider):
         # </li><li><span class="label">房屋用途</span>普通住宅          </li><li><span class="label">房屋年限</span>暂无数据
         # </li><li><span class="label">房权所属</span>非共有           </li></ul></div></div></div>
         transaction_lists = selector.xpath('//div[@class="transaction"]/div/ul/li/text()')
-        transaction_spans = selector.xpath('//div[@class="tracsaction"]/div/ul/li/span[@class="label"]/text()')
-        print transaction_spans
+        transaction_spans = selector.xpath('//div[@class="transaction"]/div/ul/li/span/text()')
         transaction_list = {}
-        print len(transaction_lists)
-        print len(transaction_spans)
         for i in range(len(transaction_lists)):
             transaction_list[transaction_spans[i]] = transaction_lists[i]
-
-
         items['transaction_list'] = transaction_list
 
 
