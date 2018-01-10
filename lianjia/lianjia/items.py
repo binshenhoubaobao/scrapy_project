@@ -30,4 +30,6 @@ class LianjiaItem(scrapy.Item):
     msg = scrapy.Field()     #price msg
     base_list = scrapy.Field() #基本属性
     transaction_list = scrapy.Field() #交易属性
+    record_price = scrapy.Field()  #历史成交记录
+    record_detail = scrapy.Field()  #历史成交记录
     #pass

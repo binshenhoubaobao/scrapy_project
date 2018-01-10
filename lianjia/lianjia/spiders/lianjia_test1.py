@@ -53,6 +53,12 @@ class Lianjia_test_Spider(scrapy.spiders.Spider):
             transaction_list[transaction_spans[i]] = transaction_lists[i]
         items['transaction_list'] = transaction_list
 
+        #历史成交记录
+        #<ul class="record_list"><li><span class="record_price" data-signsource="0">529万</span><p class="record_detail">单价71642元/平,链家成交,2017-12-25</p></li><li>
+        # <span class="record_price" data-signsource="0">暂无价格</span><p class="record_detail">其他公司成交,2015-09</p></li></ul>
+        items['record_price'] = selector.xpath('//ul[@class="record_list"]/li/span/text()')
+        items['record_detail'] = selector.xpath('//ul[@class="record_list"]/li/p/text()')
+
 
 
         yield items

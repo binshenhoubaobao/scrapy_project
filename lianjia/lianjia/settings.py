@@ -40,7 +40,7 @@ DEFAULT_REQUEST_HEADERS = {
 }
 
 ITEM_PIPELINES = {
-   'lianjia.pipelines.LianjiaPipeline': 300,
+   #'lianjia.pipelines.LianjiaPipeline': 300,
 }
 
 #DOWNLOAD_DELAY = 2
