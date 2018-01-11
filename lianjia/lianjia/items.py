@@ -32,4 +32,37 @@ class LianjiaItem(scrapy.Item):
     transaction_list = scrapy.Field() #交易属性
     record_price = scrapy.Field()  #历史成交记录
     record_detail = scrapy.Field()  #历史成交记录
+    basemore = scrapy.Field()       #房源特色
+
+    #基本属性
+    peizhidianti = scrapy.Field()  # 配备电梯
+    chanquan = scrapy.Field()  # 产权年限
+    tihubili = scrapy.Field()  # 梯户比例
+    gongnuan = scrapy.Field()  # 供暖方式
+    jianzhujiegou = scrapy.Field()  # 建筑结构
+    zhuangxiu = scrapy.Field()  # 装修情况
+    jianchengniandai = scrapy.Field()  # 建成年代
+    chaoxiang = scrapy.Field()  # 房屋朝向
+    jianzhuleixing = scrapy.Field()  # 建筑类型
+    taoneimianji = scrapy.Field()  # 套内面积
+    huxingjiegou = scrapy.Field()  # 户型结构
+    jianzhumianji = scrapy.Field()  # 建筑面积
+    louceng = scrapy.Field()  # 所在楼层
+    huxing = scrapy.Field()  # 房屋户型
+
+    #交易属性
+    bianhao = scrapy.Field()  # 链家编号
+    jiaoyiquanshu = scrapy.Field()  # 交易权属
+    guapaishijian = scrapy.Field()  # 挂牌时间
+    yongtu = scrapy.Field()  # 房屋用途
+    fangwunianxian = scrapy.Field()  # 房屋年限
+    fangquan = scrapy.Field()  # 房权所属
+
+    #msg
+    guapaijiage = scrapy.Field()  # 挂牌价格
+    chengjiaozhouqi = scrapy.Field()  # 成交周期
+    tiaojia = scrapy.Field()  # 调价
+    daikan = scrapy.Field()  # 带看
+    guanzhu = scrapy.Field()  # 关注
+    liulan = scrapy.Field()  # 浏览
     #pass
