@@ -43,7 +43,7 @@ ITEM_PIPELINES = {
    'lianjia.pipelines.LianjiaPipeline': 300,
 }
 
-#DOWNLOAD_DELAY = 2
+DOWNLOAD_DELAY = 2
 
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddleware.useragent.UserAgentMiddleware': None,

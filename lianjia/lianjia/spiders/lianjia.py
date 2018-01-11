@@ -26,11 +26,12 @@ class LianjiaSpider(scrapy.spiders.Spider):
         sel = selector.xpath("//div[@class='page-box house-lst-page-box']/@page-data")[0]  # 返回的是字符串字典
         sel = json.loads(sel)  # 转化为字典
         total_pages = sel.get("totalPage")
-        #print 'total_pages:',total_pages
+        print 'total_pages:',total_pages
         #
-        if total_pages >3:
+        '''
+        if total_pages >50:
             total_pages = 1
-
+'''
         for i in range(int(total_pages)):
             url_page = "https://bj.lianjia.com/chengjiao/{}/pg{}".format(region, str(i+1))
             #url_page1 = 'https://bj.lianjia.com/chengjiao/chaoyang/'
